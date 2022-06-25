@@ -3,10 +3,8 @@ import React from "react";
 function NavBar() {
   const links = ["home", "about", "projects"];
 
-  const concatLinks = links.map((link) => "#" + link)
-
-  const linkList = concatLinks.map((link) => {
-      return <a key={link} href={link}>{link}</a>
+  const linkList = links.map((link) => {
+      return <a key={link} href={"#" + link}>{link}</a>
   })
 
   return (

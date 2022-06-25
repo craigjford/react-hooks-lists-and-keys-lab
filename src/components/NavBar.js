@@ -2,14 +2,18 @@ import React from "react";
 
 function NavBar() {
   const links = ["home", "about", "projects"];
-  const anchorLinks = links.map((link) => {
-    return <a key={link} href="#{link}">{link}</a>
+
+  const concatLinks = links.map((link) => "#" + link)
+
+  const linkList = concatLinks.map((link) => {
+      return <a key={link} href={link}>{link}</a>
   })
 
-
-  return <nav>{/* display an <a> tag for each link here */}
-            {anchorLinks}
-         </nav>;
+  return (
+    <nav>
+      {linkList}
+    </nav>
+  )  
 }
 
 export default NavBar;
